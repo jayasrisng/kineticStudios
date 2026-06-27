@@ -1,84 +1,59 @@
-# 🎯 Simple Pendulum – Unity Physics Simulation
+# Kinetic Studios
 
-This Unity project simulates a simple pendulum using Rigidbody physics and configurable joints. It's meant for educational demos, physics experiments, or as a base for larger simulations.
+Kinetic Studios is an early-stage virtual prototyping environment for kinetic art. The project aims to help artists, designers, researchers, educators, and engineers explore motion-based sculptures in a virtual studio before committing time, materials, and cost to physical construction.
 
-## 🚀 Features
+The repository currently contains only the clean Unity foundation. Authoring tools, simulation workflows, persistence, and XR support are planned work and are not yet implemented.
 
-- Realistic pendulum movement using Unity's physics engine
-- Minimal setup: works out-of-the-box
-- Clean C# scripting and modular hierarchy
-- Lightweight: built for fast testing or teaching
+## Project status
 
-## 🎥 Overview & VR Concept
+Phase 0 establishes a single, reproducible Unity 6 project at the repository root. There is not yet a playable studio or kinetic-sculpture feature set.
 
-Watch demo videos to get an understanding of what this project does. This project includes different scenes for single and multi-pendulum setups.
+## Requirements
 
-The objective of this project is to enable manipulation of a virtual pendulum in ways not possible with a real one. In VR, users can pause and play the simulation while preserving physical properties like velocity and momentum—unlike real-world pendulums, which are influenced by external conditions such as wind or drag.
+- Unity Hub
+- Unity Editor **6000.3.17f1**
+- Git with Git LFS installed (for large binary media assets)
 
-The multi-pendulum demo showcases how varying pendulum lengths affect motion. This experience was designed to illustrate how simple it is to create kinetic art blueprints in VR.
+## Setup
 
-Kinetic art engages viewers through motion, but physical installations are often constrained by size, material, and safety concerns. In this project, we explore how virtual reality (VR) redefines interaction with kinetic art by providing immersive environments where users can manipulate, analyze, and engage with motion-based systems beyond real-world limitations.
+1. Clone the repository.
+2. Run `git lfs install` if Git LFS is not already configured on your machine.
+3. Add the repository root as a project in Unity Hub.
+4. Confirm that Unity Hub selects Editor `6000.3.17f1`.
+5. Open the project and allow Unity to restore packages and import assets.
 
-Using a simple VR pendulum as a case study, users can alter parameters such as speed and gravity, pause oscillations, and explore perspectives that are otherwise impossible to achieve. This shift in interaction demonstrates how behavior changes in virtual spaces, where users actively experiment instead of passively observing.
+No scene is currently configured as a product entry point. That will be introduced with the first vertical slice.
 
-I'd like to present the concept of virtual studios - immersive environments that allow artists, scientists, and designers to safely explore physics concepts, prototype kinetic systems, and develop blueprints. These virtual creations can be directly transferred into real-world installations, bridging the gap between imagination and reality. VR studios eliminate risks associated with real-world experimentation, enabling users to explore ideas freely and intuitively.
+## Project evolution
 
-## 🛠️ Built With
+Kinetic Studios began as **SimplePendulum**, an exploratory concept demonstrating how virtual environments could make pendulum motion easier to observe and manipulate. The earlier repository did not contain the documented pendulum implementation, and its generated Unity caches and duplicate project root made it unsuitable as a production baseline.
 
-- Unity 2022.3.5f1
-- C#
-- Rigidbody2D + Physics2D components
+The project is now being rebuilt as Kinetic Studios: a desktop-first, document-oriented tool for prototyping kinetic art, with XR interaction and a lightweight web companion considered as later extensions.
 
----
+The original concept videos are retained here as historical references:
 
-## 🧩 How to Use
+- [Simple pendulum concept video](https://github.com/user-attachments/assets/90379d1d-73a5-4150-adbc-98b1c88eec39)
+- [Multi-pendulum / virtual studio concept video](https://github.com/user-attachments/assets/b98e6284-e10c-4058-8cd9-b91bed887d34)
 
-### 1. ⭐ Give it a star if you find this helpful!
+## Roadmap
 
-### 2. 🍴 Fork instead of downloading
+- **Phase 0 — Foundation:** repository recovery, Unity 6 baseline, project identity, and contributor documentation.
+- **Phase 1 — First vertical slice:** create and edit one pendulum, control simulation, inspect basic measurements, and save/reload a design.
+- **Phase 2 — Studio authoring:** reusable components, assembly tools, inspectors, undo/redo, and iteration workflows.
+- **Phase 3 — Simulation and analysis:** richer constraints, actuators, telemetry, comparison tools, and exports.
+- **Phase 4 — Immersive interaction:** XR adapters for supported headsets using the same project and design model.
+- **Phase 5 — Web companion:** browser-based exploration and simplified prototypes interoperable with a supported subset of studio documents.
 
-Please **fork** this repo instead of just downloading and re-uploading it. Here’s how:
+Roadmap items describe intent, not currently available functionality.
 
-- Click the `Fork` button at the top right of the page
-- Clone your fork:
+## Contributing
 
-```bash
-git clone https://github.com/YOUR-USERNAME/simple-pendulum-unity.git
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
 
-- Open the folder in Unity (Unity Hub → Add project → Select the folder)
+## Citation
 
-### 3. ▶️ Run the Project
+Citation metadata is available in [CITATION.cff](CITATION.cff).
 
-- Open the `MainScene` in `Assets/Scenes/`
-- Click **Play** in Unity Editor
+## License
 
----
-
-## 💡 Customization Tips
-
-- Change the mass or length of the pendulum in the Inspector
-- Try adding a configurable joint for more advanced motion
-- Attach trail renderers or sensors to visualize forces
-
----
-
-## 📸 Demo
-
-
-https://github.com/user-attachments/assets/90379d1d-73a5-4150-adbc-98b1c88eec39
-
-https://github.com/user-attachments/assets/b98e6284-e10c-4058-8cd9-b91bed887d34
-
-
----
-
-## 🙋‍♀️ Credits
-
-Created by [Jayasri Guthula](https://github.com/jayasrisng)  
-
----
-
-## 📄 License
-
-MIT License – Feel free to use, modify, and share with credit.
+Kinetic Studios is licensed under the [MIT License](LICENSE).

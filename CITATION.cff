@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use Kinetic Studios in research or education, please cite it using this metadata."
+title: "Kinetic Studios"
+type: software
+authors:
+  - family-names: "Guthula"
+    given-names: "Jayasri"
+repository-code: "https://github.com/jayasrisng/kineticStudios"
+url: "https://github.com/jayasrisng/kineticStudios"
+license: MIT

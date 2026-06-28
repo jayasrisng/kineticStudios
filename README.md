@@ -45,6 +45,10 @@ If the builder is missing, the studio shell displays **BUILDER NOT INTEGRATED** 
 - Confirm orbit, pan, and zoom still work and UI clicks do not place components.
 - Use Overview, Front, and Detail view presets to frame consistent screenshots or recordings.
 
+## Demo v1 walkthrough
+
+For a guided portfolio recording, open `Bootstrap`, enter Play Mode, and press `F9`. Demo v1 runs for approximately 75 seconds and demonstrates the existing MVP with a simulated cursor, click ripples, focused controls, concise callouts, and smooth camera moves. The walkthrough resets the pendulum and returns to the Overview view when finished.
+
 ## Project evolution
 
 Kinetic Studios began as **SimplePendulum**, an exploratory concept demonstrating how virtual environments could make pendulum motion easier to observe and manipulate. The earlier repository did not contain the documented pendulum implementation, and its generated Unity caches and duplicate project root made it unsuitable as a production baseline.

@@ -7,6 +7,13 @@ namespace KineticStudios.CameraSystem
     /// </summary>
     public sealed class StudioCameraController : MonoBehaviour
     {
+        public enum ViewPreset
+        {
+            Overview,
+            Front,
+            Detail
+        }
+
         [Header("Focus")]
         [SerializeField] private Vector3 focusPoint = new(0f, 1f, 0f);
         [SerializeField, Min(0.5f)] private float distance = 11f;
@@ -77,6 +84,33 @@ namespace KineticStudios.CameraSystem
         {
             Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
             transform.SetPositionAndRotation(focusPoint - rotation * Vector3.forward * distance, rotation);
+        }
+
+        public void ApplyViewPreset(ViewPreset preset)
+        {
+            switch (preset)
+            {
+                case ViewPreset.Overview:
+                    focusPoint = new Vector3(0f, 1f, 0f);
+                    yaw = 135f;
+                    pitch = 28f;
+                    distance = 11f;
+                    break;
+                case ViewPreset.Front:
+                    focusPoint = new Vector3(0f, 1.7f, 0f);
+                    yaw = 180f;
+                    pitch = 12f;
+                    distance = 9f;
+                    break;
+                case ViewPreset.Detail:
+                    focusPoint = new Vector3(0f, 1.7f, 0f);
+                    yaw = 145f;
+                    pitch = 18f;
+                    distance = 6.2f;
+                    break;
+            }
+
+            ApplyTransform();
         }
     }
 }

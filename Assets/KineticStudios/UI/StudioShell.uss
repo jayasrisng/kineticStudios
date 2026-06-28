@@ -395,10 +395,33 @@
     position: absolute;
     left: 282px;
     bottom: 144px;
-    flex-direction: row;
     background-color: rgba(14, 17, 19, 0.78);
     border-radius: 3px;
-    padding: 7px 10px;
+    border-width: 1px;
+    border-color: var(--line);
+    padding: 10px 12px;
+}
+
+.hint-title {
+    margin-bottom: 6px;
+    font-size: 8px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+.hint-step {
+    margin-bottom: 3px;
+    font-size: 8px;
+    color: rgb(172, 179, 183);
+}
+
+.hint-controls {
+    flex-direction: row;
+    margin-top: 7px;
+    padding-top: 6px;
+    border-top-width: 1px;
+    border-top-color: var(--line);
 }
 
 .hint-label {
@@ -406,4 +429,45 @@
     font-size: 8px;
     letter-spacing: 1px;
     color: rgb(151, 159, 163);
+}
+
+.view-presets {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    translate: -50% 0;
+    height: 34px;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(14, 17, 19, 0.88);
+    border-width: 1px;
+    border-color: var(--line);
+    border-radius: 3px;
+    padding-left: 9px;
+    padding-right: 4px;
+}
+
+.view-presets-label {
+    margin-right: 8px;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.view-preset-button {
+    height: 24px;
+    margin-right: 4px;
+    padding-left: 9px;
+    padding-right: 9px;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 2px;
+    color: rgb(171, 178, 182);
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.view-preset-button:hover {
+    background-color: rgba(229, 176, 76, 0.1);
+    color: var(--accent);
 }

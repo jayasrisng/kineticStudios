@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using KineticStudios.Builder;
+using KineticStudios.CameraSystem;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -45,6 +46,10 @@ namespace KineticStudios.UserInterface
 
             materialField.choices = new List<string>(Enum.GetNames(typeof(StudioMaterialType)));
             materialField.index = 1;
+
+            BindViewPreset(root, "overview-view-button", StudioCameraController.ViewPreset.Overview);
+            BindViewPreset(root, "front-view-button", StudioCameraController.ViewPreset.Front);
+            BindViewPreset(root, "detail-view-button", StudioCameraController.ViewPreset.Detail);
 
             if (builder == null)
             {
@@ -109,6 +114,23 @@ namespace KineticStudios.UserInterface
             foreach (string controlName in names)
             {
                 root.Q(controlName)?.SetEnabled(enabled);
+            }
+        }
+
+        private static void BindViewPreset(VisualElement root, string buttonName, StudioCameraController.ViewPreset preset)
+        {
+            Button button = root.Q<Button>(buttonName);
+            StudioCameraController cameraController = FindAnyObjectByType<StudioCameraController>();
+
+            if (cameraController == null)
+            {
+                button?.SetEnabled(false);
+                return;
+            }
+
+            if (button != null)
+            {
+                button.clicked += () => cameraController.ApplyViewPreset(preset);
             }
         }
 

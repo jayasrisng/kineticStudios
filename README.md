@@ -25,18 +25,14 @@ Phase 1 provides a playable studio workspace with desktop camera navigation and 
 
 Use the right mouse button to orbit, middle mouse button to pan, and scroll wheel to zoom while the pointer is over the studio viewport.
 
-## Phase 2 local integration
-
-Phase 2 is currently an uncommitted MVP builder change set and requires one local editor integration step before testing:
+## Phase 2 local testing
 
 1. Open the repository root in Unity `6000.3.17f1` and wait for script compilation to finish.
-2. In the Unity menu, choose **Kinetic Studios → Phase 2 → Integrate MVP Builder**.
-3. Confirm the Console reports `Kinetic Studios Phase 2 scene integration completed.`
-4. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
+2. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
 
-The integration command creates Wood, Metal, Rope, and Glass materials under `Assets/KineticStudios/Art/Materials`, attaches `StudioBuilderController` to `StudioWorkspace`, assigns its camera/material references, and saves the scene. It is safe to run again; the existing builder object is replaced.
+The committed workspace already contains the MVP builder and material references. If those scene references ever need to be regenerated during development, choose **Kinetic Studios → Phase 2 → Integrate MVP Builder**. The command recreates the four material presets, replaces the existing builder object, assigns its references, and saves `StudioWorkspace`.
 
-If the integration command has not been run, the studio shell remains usable but displays **BUILDER NOT INTEGRATED** and disables Phase 2 controls instead of throwing null-reference exceptions.
+If the builder is missing, the studio shell displays **BUILDER NOT INTEGRATED** and disables Phase 2 controls instead of throwing null-reference exceptions.
 
 ### Phase 2 manual test checklist
 
@@ -47,6 +43,7 @@ If the integration command has not been run, the studio shell remains usable but
 - Apply Wood, Metal, Rope, and Glass material choices.
 - Verify Play starts motion, Pause freezes it, and Reset restores the configured initial angle.
 - Confirm orbit, pan, and zoom still work and UI clicks do not place components.
+- Use Overview, Front, and Detail view presets to frame consistent screenshots or recordings.
 
 ## Project evolution
 

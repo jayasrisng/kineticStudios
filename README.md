@@ -1,85 +1,126 @@
-# Kinetic Studios
+<p align="center">
+  <img src="Media/hero.png" alt="Kinetic Studios virtual prototyping workspace" width="100%">
+</p>
 
-Kinetic Studios is an early-stage virtual prototyping environment for kinetic art. The project aims to help artists, designers, researchers, educators, and engineers explore motion-based sculptures in a virtual studio before committing time, materials, and cost to physical construction.
+<h1 align="center">Kinetic Studios</h1>
 
-The repository currently contains the clean Unity foundation and a desktop studio shell. Authoring tools, simulation workflows, persistence, and XR support are planned work and are not yet implemented.
+<p align="center"><strong>A desktop-first virtual studio for prototyping kinetic art before it is built.</strong></p>
 
-## Project status
+<p align="center">
+  <a href="Media/demo.mp4"><img src="Media/demo.gif" alt="Kinetic Studios guided demo" width="820"></a>
+</p>
 
-Phase 1 provides a playable studio workspace with desktop camera navigation and placeholder application panels. There is not yet a kinetic-sculpture authoring or simulation feature set.
+## Features
 
-## Requirements
+- Assemble a pendulum from reusable anchor, connector, and weight components.
+- Tune length, mass, gravity, damping, and initial angle in a focused inspector.
+- Switch between wood, metal, rope, and glass material studies.
+- Play, pause, and reset the simulation while inspecting motion from any angle.
+- Navigate with desktop orbit, pan, zoom, and three presentation-ready camera presets.
+- Run a guided 60–90 second product walkthrough with `F9` in Play Mode.
 
-- Unity Hub
-- Unity Editor **6000.3.17f1**
-- Git with Git LFS installed (for large binary media assets)
+## Demo
 
-## Setup
+[Watch the full 82-second demo in 1080p/60](Media/demo.mp4). The animated preview above links to the same video.
 
-1. Clone the repository.
-2. Run `git lfs install` if Git LFS is not already configured on your machine.
-3. Add the repository root as a project in Unity Hub.
-4. Confirm that Unity Hub selects Editor `6000.3.17f1`.
-5. Open the project and allow Unity to restore packages and import assets.
-6. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
+## Studio highlights
 
-Use the right mouse button to orbit, middle mouse button to pan, and scroll wheel to zoom while the pointer is over the studio viewport.
+<p align="center">
+  <img src="Media/overview.png" alt="Kinetic Studios workspace overview" width="100%">
+</p>
 
-## Phase 2 local testing
+<p align="center">
+  <img src="Media/inspector.png" alt="Editing pendulum properties in the inspector" width="49%">
+  <img src="Media/materials.png" alt="Previewing a wood material study" width="49%">
+</p>
 
-1. Open the repository root in Unity `6000.3.17f1` and wait for script compilation to finish.
-2. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
+<p align="center">
+  <img src="Media/simulation.png" alt="Running the configured pendulum simulation" width="49%">
+  <img src="Media/hero.png" alt="Final Kinetic Studios hero view" width="49%">
+</p>
 
-The committed workspace already contains the MVP builder and material references. If those scene references ever need to be regenerated during development, choose **Kinetic Studios → Phase 2 → Integrate MVP Builder**. The command recreates the four material presets, replaces the existing builder object, assigns its references, and saves `StudioWorkspace`.
+## Architecture overview
 
-If the builder is missing, the studio shell displays **BUILDER NOT INTEGRATED** and disables Phase 2 controls instead of throwing null-reference exceptions.
+The MVP is deliberately small and modular. `Bootstrap` owns startup and loads `StudioWorkspace`. Runtime assemblies separate studio navigation, builder state, pendulum behavior, UI orchestration, and the optional demo director. UI Toolkit provides the shell, while Unity Physics drives the prototype.
 
-### Phase 2 manual test checklist
+```text
+Bootstrap scene
+  └── StudioWorkspace scene
+      ├── StudioShellController ── UI Toolkit shell
+      ├── StudioBuilderController ── placement and selection
+      ├── PendulumAssembly ── editable physical model
+      ├── StudioCameraController ── navigation and presets
+      └── DemoWalkthroughController ── presentation-only guidance
+```
 
-- Use Anchor, Rod / String, and Weight palette buttons, then click the viewport floor to place each item.
-- Click placed items to select them; verify type and name in the Inspector.
-- Delete a selection with the Inspector button, Delete, or Backspace.
-- Create the demo pendulum and edit length, mass, gravity, damping, and initial angle.
-- Apply Wood, Metal, Rope, and Glass material choices.
-- Verify Play starts motion, Pause freezes it, and Reset restores the configured initial angle.
-- Confirm orbit, pan, and zoom still work and UI clicks do not place components.
-- Use Overview, Front, and Detail view presets to frame consistent screenshots or recordings.
+`Editor/Phase2SceneBuilder.cs` remains a temporary integration utility that can regenerate the MVP scene references and material presets. It is not part of runtime behavior.
 
-## Demo v1 walkthrough
+## Current capabilities
 
-For a guided portfolio recording, open `Bootstrap`, enter Play Mode, and press `F9`. Demo v1 runs for approximately 75 seconds and demonstrates the existing MVP with a simulated cursor, click ripples, focused controls, concise callouts, and smooth camera moves. The walkthrough resets the pendulum and returns to the Overview view when finished.
-
-## Project evolution
-
-Kinetic Studios began as **SimplePendulum**, an exploratory concept demonstrating how virtual environments could make pendulum motion easier to observe and manipulate. The earlier repository did not contain the documented pendulum implementation, and its generated Unity caches and duplicate project root made it unsuitable as a production baseline.
-
-The project is now being rebuilt as Kinetic Studios: a desktop-first, document-oriented tool for prototyping kinetic art, with XR interaction and a lightweight web companion considered as later extensions.
-
-The original concept videos are retained here as historical references:
-
-- [Simple pendulum concept video](https://github.com/user-attachments/assets/90379d1d-73a5-4150-adbc-98b1c88eec39)
-- [Multi-pendulum / virtual studio concept video](https://github.com/user-attachments/assets/b98e6284-e10c-4058-8cd9-b91bed887d34)
+Kinetic Studios v0.1.0 is a focused vertical slice: a polished studio shell, basic component placement and deletion, one assembled pendulum, live property editing, four visual materials, simulation transport controls, camera presets, and a guided portfolio walkthrough. Save/load, undo/redo, generalized constraints, XR, and web interoperability are not included yet.
 
 ## Roadmap
 
-- **Phase 0 — Foundation:** repository recovery, Unity 6 baseline, project identity, and contributor documentation.
-- **Phase 1 — Studio shell:** bootstrap flow, studio environment, desktop camera navigation, and placeholder application UI.
-- **Phase 2 — First vertical slice:** create and edit one pendulum, control simulation, inspect basic measurements, and save/reload a design.
-- **Phase 3 — Studio authoring:** reusable components, assembly tools, inspectors, undo/redo, and iteration workflows.
-- **Phase 4 — Simulation and analysis:** richer constraints, actuators, telemetry, comparison tools, and exports.
-- **Phase 5 — Immersive interaction:** XR adapters for supported headsets using the same project and design model.
-- **Phase 6 — Web companion:** browser-based exploration and simplified prototypes interoperable with a supported subset of studio documents.
+- **v0.2 — Authoring foundation:** durable design data, save/load, undo/redo, and reusable assemblies.
+- **v0.3 — Simulation tools:** constraints, actuators, measurements, comparison, and export workflows.
+- **v0.4 — Immersive interaction:** XR input adapters over the same studio and design model.
+- **Later — Web companion:** lightweight browser exploration for a supported subset of studio documents.
 
-Roadmap items describe intent, not currently available functionality.
+Roadmap items describe direction, not committed release dates.
 
-## Contributing
+## How to run
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
+1. Install Unity Hub and Unity Editor **6000.3.17f1**.
+2. Clone the repository and add its root folder in Unity Hub.
+3. Allow packages and assets to import.
+4. Open `Assets/KineticStudios/Scenes/Bootstrap.unity`.
+5. Press Play. Press `F9` to launch the guided walkthrough.
 
-## Citation
+If scene references need to be regenerated during development, choose **Kinetic Studios → Phase 2 → Integrate MVP Builder**, then save the scene. The committed scenes are already integrated.
 
-Citation metadata is available in [CITATION.cff](CITATION.cff).
+## Controls
+
+| Action | Control |
+| --- | --- |
+| Orbit | Right mouse drag |
+| Pan | Middle mouse drag |
+| Zoom | Mouse wheel |
+| Select | Left click an object |
+| Delete | Inspector button, `Delete`, or `Backspace` |
+| Guided demo | `F9` in Play Mode |
+| Camera presets | Overview, Front, Detail buttons |
+
+## Project structure
+
+```text
+Assets/KineticStudios/
+├── Art/Materials/        Studio and prototype materials
+├── Editor/               Temporary scene integration tooling
+├── Runtime/              Bootstrap, builder, camera, demo, and UI code
+├── Scenes/               Bootstrap and StudioWorkspace
+└── UI/                   UI Toolkit layouts, styles, and theme
+Documentation/            Recording guide and portfolio case study
+Media/                    Demo video, GIF, screenshots, and release artwork
+Packages/                 Minimal Unity package manifest
+ProjectSettings/          Unity 6000.3.17f1 project configuration
+```
+
+## Future vision
+
+Kinetic Studios is intended to become a virtual prototyping environment where artists, designers, researchers, educators, and engineers can explore motion-based sculptures before committing physical materials and fabrication time. Desktop remains the primary authoring experience; future XR devices should provide alternate interaction with the same documents and simulation model rather than become separate applications.
+
+## Project evolution
+
+The project began as **SimplePendulum**, an exploratory visualization concept. It has been rebuilt as Kinetic Studios with a clean Unity 6 foundation and a broader goal: a reusable virtual studio for kinetic-art design. Historical concept references remain available as a [simple pendulum video](https://github.com/user-attachments/assets/90379d1d-73a5-4150-adbc-98b1c88eec39) and [multi-pendulum studio video](https://github.com/user-attachments/assets/b98e6284-e10c-4058-8cd9-b91bed887d34).
+
+## Acknowledgements
+
+Kinetic Studios is inspired by kinetic artists and mechanism designers who turn motion, timing, material, and space into an expressive medium. Built with [Unity](https://unity.com/).
+
+Contributions are welcome; read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request. Citation metadata is provided in [CITATION.cff](CITATION.cff).
+
+For the design and engineering story, read the [portfolio case study](Documentation/PortfolioCaseStudy.md). Release scope and suggested repository metadata are in the [v0.1.0 release notes](Documentation/Release-v0.1.0.md).
 
 ## License
 
-Kinetic Studios is licensed under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).

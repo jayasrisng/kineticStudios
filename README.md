@@ -25,6 +25,29 @@ Phase 1 provides a playable studio workspace with desktop camera navigation and 
 
 Use the right mouse button to orbit, middle mouse button to pan, and scroll wheel to zoom while the pointer is over the studio viewport.
 
+## Phase 2 local integration
+
+Phase 2 is currently an uncommitted MVP builder change set and requires one local editor integration step before testing:
+
+1. Open the repository root in Unity `6000.3.17f1` and wait for script compilation to finish.
+2. In the Unity menu, choose **Kinetic Studios → Phase 2 → Integrate MVP Builder**.
+3. Confirm the Console reports `Kinetic Studios Phase 2 scene integration completed.`
+4. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
+
+The integration command creates Wood, Metal, Rope, and Glass materials under `Assets/KineticStudios/Art/Materials`, attaches `StudioBuilderController` to `StudioWorkspace`, assigns its camera/material references, and saves the scene. It is safe to run again; the existing builder object is replaced.
+
+If the integration command has not been run, the studio shell remains usable but displays **BUILDER NOT INTEGRATED** and disables Phase 2 controls instead of throwing null-reference exceptions.
+
+### Phase 2 manual test checklist
+
+- Use Anchor, Rod / String, and Weight palette buttons, then click the viewport floor to place each item.
+- Click placed items to select them; verify type and name in the Inspector.
+- Delete a selection with the Inspector button, Delete, or Backspace.
+- Create the demo pendulum and edit length, mass, gravity, damping, and initial angle.
+- Apply Wood, Metal, Rope, and Glass material choices.
+- Verify Play starts motion, Pause freezes it, and Reset restores the configured initial angle.
+- Confirm orbit, pan, and zoom still work and UI clicks do not place components.
+
 ## Project evolution
 
 Kinetic Studios began as **SimplePendulum**, an exploratory concept demonstrating how virtual environments could make pendulum motion easier to observe and manipulate. The earlier repository did not contain the documented pendulum implementation, and its generated Unity caches and duplicate project root made it unsuitable as a production baseline.

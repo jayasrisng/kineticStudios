@@ -1228,6 +1228,59 @@ Transform:
   - {fileID: 48019031}
   m_Father: {fileID: 2034204827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &106321812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106321814}
+  - component: {fileID: 106321813}
+  m_Layer: 0
+  m_Name: Studio Builder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &106321813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106321812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 954a46e7f2afb42c8aa6a9b8ca12619a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: KineticStudios.Runtime::KineticStudios.Builder.StudioBuilderController
+  studioCamera: {fileID: 1754423645}
+  woodMaterial: {fileID: 2100000, guid: 0ef46853a7b494b9892c5ea13d457b9d, type: 2}
+  metalMaterial: {fileID: 2100000, guid: 738aa4b3ee17e483c87e6c1ec1ddb92f, type: 2}
+  ropeMaterial: {fileID: 2100000, guid: 5e070610ae2c3481fb3cdaa83a7181a5, type: 2}
+  glassMaterial: {fileID: 2100000, guid: daa9f07450a434d4b895244ac8adcec6, type: 2}
+  leftPanelWidth: 264
+  rightPanelWidth: 320
+  topBarHeight: 56
+  bottomPanelHeight: 128
+--- !u!4 &106321814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106321812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &155227025
 GameObject:
   m_ObjectHideFlags: 0
@@ -13217,3 +13270,4 @@ SceneRoots:
   - {fileID: 1166486803}
   - {fileID: 1754423646}
   - {fileID: 1347120570}
+  - {fileID: 106321814}

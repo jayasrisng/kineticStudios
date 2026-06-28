@@ -20,35 +20,52 @@
         <ui:VisualElement name="components-panel" class="side-panel left-panel panel-surface">
             <ui:Label text="COMPONENTS" class="panel-title" />
             <ui:Label text="Build library" class="panel-subtitle" />
-            <ui:VisualElement class="placeholder-card accent-card">
-                <ui:Label text="＋" class="placeholder-icon" />
-                <ui:Label text="Component catalog" class="placeholder-title" />
-                <ui:Label text="Reusable parts will appear here in a future phase." class="placeholder-copy" />
+            <ui:VisualElement class="palette-stack">
+                <ui:Button name="anchor-button" text="ANCHOR" class="palette-button" />
+                <ui:Button name="connector-button" text="ROD / STRING" class="palette-button" />
+                <ui:Button name="weight-button" text="WEIGHT" class="palette-button" />
             </ui:VisualElement>
             <ui:VisualElement class="panel-rule" />
-            <ui:Label text="COLLECTIONS" class="section-kicker" />
-            <ui:Label text="No collections yet" class="empty-label" />
+            <ui:Label text="QUICK START" class="section-kicker" />
+            <ui:Button name="demo-button" text="CREATE DEMO PENDULUM" class="demo-button" />
+            <ui:Label text="Choose a component, then click the studio floor to place it." class="placement-help" />
         </ui:VisualElement>
 
         <ui:VisualElement name="inspector-panel" class="side-panel right-panel panel-surface">
             <ui:Label text="INSPECTOR" class="panel-title" />
             <ui:Label text="Selection properties" class="panel-subtitle" />
-            <ui:VisualElement class="inspector-empty">
+            <ui:VisualElement name="inspector-empty" class="inspector-empty">
                 <ui:VisualElement class="selection-glyph" />
                 <ui:Label text="Nothing selected" class="placeholder-title" />
                 <ui:Label text="Select an object in the studio to inspect its properties." class="placeholder-copy centered-copy" />
             </ui:VisualElement>
+            <ui:ScrollView name="inspector-content" class="inspector-content">
+                <ui:Label name="selection-type" text="COMPONENT" class="selection-type" />
+                <ui:Label name="selection-name" text="Selection" class="selection-name" />
+                <ui:DropdownField name="material-field" label="Material" class="property-field" />
+                <ui:VisualElement name="pendulum-properties" class="pendulum-properties">
+                    <ui:Label text="PENDULUM" class="section-kicker property-section-title" />
+                    <ui:FloatField name="length-field" label="Length (m)" value="2.6" class="property-field" />
+                    <ui:FloatField name="mass-field" label="Mass (kg)" value="1.2" class="property-field" />
+                    <ui:FloatField name="gravity-field" label="Gravity (m/s²)" value="9.81" class="property-field" />
+                    <ui:FloatField name="damping-field" label="Damping" value="0.08" class="property-field" />
+                    <ui:FloatField name="initial-angle-field" label="Initial angle (°)" value="24" class="property-field" />
+                    <ui:Button name="apply-properties-button" text="APPLY &amp; RESET" class="apply-button" />
+                </ui:VisualElement>
+                <ui:Button name="delete-button" text="DELETE SELECTION" class="delete-button" />
+                <ui:Label text="Delete / Backspace also removes the selection." class="shortcut-help" />
+            </ui:ScrollView>
         </ui:VisualElement>
 
         <ui:VisualElement name="simulation-panel" class="bottom-panel panel-surface">
             <ui:VisualElement class="transport-group">
                 <ui:Label text="SIMULATION" class="panel-title compact-title" />
-                <ui:Label text="READY" class="simulation-state" />
+                <ui:Label name="simulation-state" text="PAUSED" class="simulation-state" />
             </ui:VisualElement>
             <ui:VisualElement class="transport-controls">
-                <ui:Label text="↺" class="transport-button muted-control" />
-                <ui:Label text="▶" class="transport-button primary-control" />
-                <ui:Label text="❙❙" class="transport-button muted-control" />
+                <ui:Button name="reset-button" text="↺" class="transport-button muted-control" />
+                <ui:Button name="play-button" text="▶" class="transport-button primary-control" />
+                <ui:Button name="pause-button" text="❙❙" class="transport-button muted-control" />
                 <ui:Label text="❯❙" class="transport-button muted-control" />
             </ui:VisualElement>
             <ui:VisualElement class="timeline-placeholder">

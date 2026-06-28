@@ -137,6 +137,49 @@
     justify-content: center;
 }
 
+.palette-stack {
+    margin-top: 2px;
+}
+
+.palette-button {
+    height: 44px;
+    margin-bottom: 8px;
+    padding-left: 14px;
+    background-color: var(--surface-soft);
+    border-width: 1px;
+    border-color: var(--line);
+    border-radius: 3px;
+    color: var(--ink);
+    font-size: 10px;
+    letter-spacing: 1px;
+    -unity-text-align: middle-left;
+}
+
+.palette-button:hover {
+    border-color: var(--accent-dark);
+    background-color: rgba(229, 176, 76, 0.08);
+}
+
+.demo-button,
+.apply-button {
+    height: 36px;
+    background-color: var(--accent);
+    color: rgb(22, 24, 24);
+    border-width: 0;
+    border-radius: 3px;
+    font-size: 9px;
+    -unity-font-style: bold;
+    letter-spacing: 1px;
+}
+
+.placement-help,
+.shortcut-help {
+    margin-top: 10px;
+    font-size: 9px;
+    color: var(--muted);
+    white-space: normal;
+}
+
 .accent-card {
     background-color: rgba(229, 176, 76, 0.035);
     border-color: var(--accent-dark);
@@ -185,6 +228,70 @@
     align-items: center;
     justify-content: center;
     padding: 34px;
+}
+
+.inspector-content {
+    display: none;
+    flex-grow: 1;
+}
+
+.selection-type {
+    margin-top: 4px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--accent);
+}
+
+.selection-name {
+    margin-top: 5px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    -unity-font-style: bold;
+    color: var(--ink);
+}
+
+.property-field {
+    margin-bottom: 9px;
+    font-size: 10px;
+}
+
+.property-field > .unity-base-field__label {
+    color: var(--muted);
+    min-width: 112px;
+}
+
+.property-field > .unity-base-field__input {
+    background-color: rgb(29, 34, 38);
+    border-width: 1px;
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+.pendulum-properties {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top-width: 1px;
+    border-top-color: var(--line);
+}
+
+.property-section-title {
+    margin-bottom: 13px;
+}
+
+.apply-button {
+    margin-top: 6px;
+}
+
+.delete-button {
+    height: 34px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: rgb(205, 114, 100);
+    border-width: 1px;
+    border-color: rgb(91, 50, 45);
+    border-radius: 3px;
+    font-size: 9px;
+    letter-spacing: 1px;
 }
 
 .selection-glyph {

@@ -2,11 +2,11 @@
 
 Kinetic Studios is an early-stage virtual prototyping environment for kinetic art. The project aims to help artists, designers, researchers, educators, and engineers explore motion-based sculptures in a virtual studio before committing time, materials, and cost to physical construction.
 
-The repository currently contains only the clean Unity foundation. Authoring tools, simulation workflows, persistence, and XR support are planned work and are not yet implemented.
+The repository currently contains the clean Unity foundation and a desktop studio shell. Authoring tools, simulation workflows, persistence, and XR support are planned work and are not yet implemented.
 
 ## Project status
 
-Phase 0 establishes a single, reproducible Unity 6 project at the repository root. There is not yet a playable studio or kinetic-sculpture feature set.
+Phase 1 provides a playable studio workspace with desktop camera navigation and placeholder application panels. There is not yet a kinetic-sculpture authoring or simulation feature set.
 
 ## Requirements
 
@@ -21,8 +21,9 @@ Phase 0 establishes a single, reproducible Unity 6 project at the repository roo
 3. Add the repository root as a project in Unity Hub.
 4. Confirm that Unity Hub selects Editor `6000.3.17f1`.
 5. Open the project and allow Unity to restore packages and import assets.
+6. Open `Assets/KineticStudios/Scenes/Bootstrap.unity` and press Play.
 
-No scene is currently configured as a product entry point. That will be introduced with the first vertical slice.
+Use the right mouse button to orbit, middle mouse button to pan, and scroll wheel to zoom while the pointer is over the studio viewport.
 
 ## Project evolution
 
@@ -38,11 +39,12 @@ The original concept videos are retained here as historical references:
 ## Roadmap
 
 - **Phase 0 — Foundation:** repository recovery, Unity 6 baseline, project identity, and contributor documentation.
-- **Phase 1 — First vertical slice:** create and edit one pendulum, control simulation, inspect basic measurements, and save/reload a design.
-- **Phase 2 — Studio authoring:** reusable components, assembly tools, inspectors, undo/redo, and iteration workflows.
-- **Phase 3 — Simulation and analysis:** richer constraints, actuators, telemetry, comparison tools, and exports.
-- **Phase 4 — Immersive interaction:** XR adapters for supported headsets using the same project and design model.
-- **Phase 5 — Web companion:** browser-based exploration and simplified prototypes interoperable with a supported subset of studio documents.
+- **Phase 1 — Studio shell:** bootstrap flow, studio environment, desktop camera navigation, and placeholder application UI.
+- **Phase 2 — First vertical slice:** create and edit one pendulum, control simulation, inspect basic measurements, and save/reload a design.
+- **Phase 3 — Studio authoring:** reusable components, assembly tools, inspectors, undo/redo, and iteration workflows.
+- **Phase 4 — Simulation and analysis:** richer constraints, actuators, telemetry, comparison tools, and exports.
+- **Phase 5 — Immersive interaction:** XR adapters for supported headsets using the same project and design model.
+- **Phase 6 — Web companion:** browser-based exploration and simplified prototypes interoperable with a supported subset of studio documents.
 
 Roadmap items describe intent, not currently available functionality.
 

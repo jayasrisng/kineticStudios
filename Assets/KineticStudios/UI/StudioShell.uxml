@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="StudioShell.uss" />
+    <ui:VisualElement name="app-shell" class="app-shell">
+        <ui:VisualElement name="top-bar" class="top-bar panel-surface">
+            <ui:VisualElement class="brand-lockup">
+                <ui:Label text="KINETIC" class="brand-primary" />
+                <ui:Label text="STUDIOS" class="brand-secondary" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-strip">
+                <ui:Label text="FILE" class="menu-label" />
+                <ui:Label text="EDIT" class="menu-label" />
+                <ui:Label text="VIEW" class="menu-label" />
+            </ui:VisualElement>
+            <ui:VisualElement class="top-spacer" />
+            <ui:Label text="UNTITLED STUDY" class="document-name" />
+            <ui:Label name="status-label" text="INITIALIZING" class="status-label" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="components-panel" class="side-panel left-panel panel-surface">
+            <ui:Label text="COMPONENTS" class="panel-title" />
+            <ui:Label text="Build library" class="panel-subtitle" />
+            <ui:VisualElement class="placeholder-card accent-card">
+                <ui:Label text="＋" class="placeholder-icon" />
+                <ui:Label text="Component catalog" class="placeholder-title" />
+                <ui:Label text="Reusable parts will appear here in a future phase." class="placeholder-copy" />
+            </ui:VisualElement>
+            <ui:VisualElement class="panel-rule" />
+            <ui:Label text="COLLECTIONS" class="section-kicker" />
+            <ui:Label text="No collections yet" class="empty-label" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="inspector-panel" class="side-panel right-panel panel-surface">
+            <ui:Label text="INSPECTOR" class="panel-title" />
+            <ui:Label text="Selection properties" class="panel-subtitle" />
+            <ui:VisualElement class="inspector-empty">
+                <ui:VisualElement class="selection-glyph" />
+                <ui:Label text="Nothing selected" class="placeholder-title" />
+                <ui:Label text="Select an object in the studio to inspect its properties." class="placeholder-copy centered-copy" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+        <ui:VisualElement name="simulation-panel" class="bottom-panel panel-surface">
+            <ui:VisualElement class="transport-group">
+                <ui:Label text="SIMULATION" class="panel-title compact-title" />
+                <ui:Label text="READY" class="simulation-state" />
+            </ui:VisualElement>
+            <ui:VisualElement class="transport-controls">
+                <ui:Label text="↺" class="transport-button muted-control" />
+                <ui:Label text="▶" class="transport-button primary-control" />
+                <ui:Label text="❙❙" class="transport-button muted-control" />
+                <ui:Label text="❯❙" class="transport-button muted-control" />
+            </ui:VisualElement>
+            <ui:VisualElement class="timeline-placeholder">
+                <ui:VisualElement class="timeline-line" />
+                <ui:VisualElement class="timeline-marker" />
+            </ui:VisualElement>
+            <ui:Label text="00:00.000" class="timecode" />
+        </ui:VisualElement>
+
+        <ui:VisualElement name="viewport-hint" class="viewport-hint">
+            <ui:Label text="RMB  ORBIT" class="hint-label" />
+            <ui:Label text="MMB  PAN" class="hint-label" />
+            <ui:Label text="SCROLL  ZOOM" class="hint-label" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

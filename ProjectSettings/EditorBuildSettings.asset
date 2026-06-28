@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/KineticStudios/Scenes/Bootstrap.unity
+    guid: fb5e4c43d69c445c0970b4ca78f6260f
+  - enabled: 1
+    path: Assets/KineticStudios/Scenes/StudioWorkspace.unity
+    guid: 52f5de29590d64de4a447fd408755b68
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
